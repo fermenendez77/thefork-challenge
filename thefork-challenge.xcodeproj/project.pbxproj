@@ -1,0 +1,723 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48F72E912735433A003E7657 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72E902735433A003E7657 /* AppDelegate.swift */; };
+		48F72E952735433A003E7657 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72E942735433A003E7657 /* ViewController.swift */; };
+		48F72E982735433A003E7657 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F72E962735433A003E7657 /* Main.storyboard */; };
+		48F72E9A2735433C003E7657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F72E992735433C003E7657 /* Assets.xcassets */; };
+		48F72E9D2735433C003E7657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F72E9B2735433C003E7657 /* LaunchScreen.storyboard */; };
+		48F72EA82735433C003E7657 /* thefork_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EA72735433C003E7657 /* thefork_challengeTests.swift */; };
+		48F72EB22735433C003E7657 /* thefork_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EB12735433C003E7657 /* thefork_challengeUITests.swift */; };
+		48F72EB42735433C003E7657 /* thefork_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EB32735433C003E7657 /* thefork_challengeUITestsLaunchTests.swift */; };
+		48F72EC227355C50003E7657 /* RestaurantsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EC127355C50003E7657 /* RestaurantsResponse.swift */; };
+		48F72EC42735652A003E7657 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EC327356529003E7657 /* Restaurant.swift */; };
+		48F72EC627356544003E7657 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EC527356544003E7657 /* Address.swift */; };
+		48F72EC827356562003E7657 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EC727356562003E7657 /* Rating.swift */; };
+		48F72ECA27356586003E7657 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EC927356586003E7657 /* Offer.swift */; };
+		48F72ECC273565C9003E7657 /* Currencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72ECB273565C9003E7657 /* Currencies.swift */; };
+		48F72ECE273565E9003E7657 /* MainPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72ECD273565E9003E7657 /* MainPhoto.swift */; };
+		48F72ED1273567C6003E7657 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72ED0273567C6003E7657 /* NetworkService.swift */; };
+		48F72ED527356EB2003E7657 /* RestaurantsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72ED427356EB2003E7657 /* RestaurantsListViewModel.swift */; };
+		48F72ED727356F7E003E7657 /* RestaurantsListDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72ED627356F7E003E7657 /* RestaurantsListDataFetcher.swift */; };
+		48F72EDA2735817F003E7657 /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72ED92735817F003E7657 /* Binding.swift */; };
+		48F72EDC27358272003E7657 /* UIView+ConstraintAnchors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EDB27358272003E7657 /* UIView+ConstraintAnchors.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		48F72EA42735433C003E7657 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48F72E852735433A003E7657 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48F72E8C2735433A003E7657;
+			remoteInfo = "thefork-challenge";
+		};
+		48F72EAE2735433C003E7657 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 48F72E852735433A003E7657 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 48F72E8C2735433A003E7657;
+			remoteInfo = "thefork-challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		48F72E8D2735433A003E7657 /* thefork-challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "thefork-challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F72E902735433A003E7657 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		48F72E942735433A003E7657 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		48F72E972735433A003E7657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		48F72E992735433C003E7657 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		48F72E9C2735433C003E7657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		48F72E9E2735433C003E7657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		48F72EA32735433C003E7657 /* thefork-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "thefork-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F72EA72735433C003E7657 /* thefork_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thefork_challengeTests.swift; sourceTree = "<group>"; };
+		48F72EAD2735433C003E7657 /* thefork-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "thefork-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		48F72EB12735433C003E7657 /* thefork_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thefork_challengeUITests.swift; sourceTree = "<group>"; };
+		48F72EB32735433C003E7657 /* thefork_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thefork_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		48F72EC127355C50003E7657 /* RestaurantsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsResponse.swift; sourceTree = "<group>"; };
+		48F72EC327356529003E7657 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		48F72EC527356544003E7657 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		48F72EC727356562003E7657 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		48F72EC927356586003E7657 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		48F72ECB273565C9003E7657 /* Currencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currencies.swift; sourceTree = "<group>"; };
+		48F72ECD273565E9003E7657 /* MainPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPhoto.swift; sourceTree = "<group>"; };
+		48F72ED0273567C6003E7657 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		48F72ED427356EB2003E7657 /* RestaurantsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsListViewModel.swift; sourceTree = "<group>"; };
+		48F72ED627356F7E003E7657 /* RestaurantsListDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsListDataFetcher.swift; sourceTree = "<group>"; };
+		48F72ED92735817F003E7657 /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
+		48F72EDB27358272003E7657 /* UIView+ConstraintAnchors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConstraintAnchors.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48F72E8A2735433A003E7657 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F72EA02735433C003E7657 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F72EAA2735433C003E7657 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48F72E842735433A003E7657 = {
+			isa = PBXGroup;
+			children = (
+				48F72E8F2735433A003E7657 /* thefork-challenge */,
+				48F72EA62735433C003E7657 /* thefork-challengeTests */,
+				48F72EB02735433C003E7657 /* thefork-challengeUITests */,
+				48F72E8E2735433A003E7657 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		48F72E8E2735433A003E7657 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48F72E8D2735433A003E7657 /* thefork-challenge.app */,
+				48F72EA32735433C003E7657 /* thefork-challengeTests.xctest */,
+				48F72EAD2735433C003E7657 /* thefork-challengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48F72E8F2735433A003E7657 /* thefork-challenge */ = {
+			isa = PBXGroup;
+			children = (
+				48F72EDD273584A0003E7657 /* Resources */,
+				48F72ED827358173003E7657 /* Core */,
+				48F72ED227356D0B003E7657 /* Scenes */,
+				48F72ECF273567AC003E7657 /* Networking */,
+				48F72EC02735434D003E7657 /* Model */,
+				48F72E902735433A003E7657 /* AppDelegate.swift */,
+				48F72E962735433A003E7657 /* Main.storyboard */,
+				48F72E992735433C003E7657 /* Assets.xcassets */,
+				48F72E9B2735433C003E7657 /* LaunchScreen.storyboard */,
+				48F72E9E2735433C003E7657 /* Info.plist */,
+			);
+			path = "thefork-challenge";
+			sourceTree = "<group>";
+		};
+		48F72EA62735433C003E7657 /* thefork-challengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				48F72EA72735433C003E7657 /* thefork_challengeTests.swift */,
+			);
+			path = "thefork-challengeTests";
+			sourceTree = "<group>";
+		};
+		48F72EB02735433C003E7657 /* thefork-challengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				48F72EB12735433C003E7657 /* thefork_challengeUITests.swift */,
+				48F72EB32735433C003E7657 /* thefork_challengeUITestsLaunchTests.swift */,
+			);
+			path = "thefork-challengeUITests";
+			sourceTree = "<group>";
+		};
+		48F72EC02735434D003E7657 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				48F72EC127355C50003E7657 /* RestaurantsResponse.swift */,
+				48F72EC327356529003E7657 /* Restaurant.swift */,
+				48F72EC527356544003E7657 /* Address.swift */,
+				48F72EC727356562003E7657 /* Rating.swift */,
+				48F72EC927356586003E7657 /* Offer.swift */,
+				48F72ECB273565C9003E7657 /* Currencies.swift */,
+				48F72ECD273565E9003E7657 /* MainPhoto.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		48F72ECF273567AC003E7657 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				48F72ED0273567C6003E7657 /* NetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		48F72ED227356D0B003E7657 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				48F72ED327356E8E003E7657 /* restaurantsList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		48F72ED327356E8E003E7657 /* restaurantsList */ = {
+			isa = PBXGroup;
+			children = (
+				48F72E942735433A003E7657 /* ViewController.swift */,
+				48F72ED427356EB2003E7657 /* RestaurantsListViewModel.swift */,
+				48F72ED627356F7E003E7657 /* RestaurantsListDataFetcher.swift */,
+			);
+			path = restaurantsList;
+			sourceTree = "<group>";
+		};
+		48F72ED827358173003E7657 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				48F72ED92735817F003E7657 /* Binding.swift */,
+				48F72EDB27358272003E7657 /* UIView+ConstraintAnchors.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		48F72EDD273584A0003E7657 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48F72E8C2735433A003E7657 /* thefork-challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48F72EB72735433C003E7657 /* Build configuration list for PBXNativeTarget "thefork-challenge" */;
+			buildPhases = (
+				48F72E892735433A003E7657 /* Sources */,
+				48F72E8A2735433A003E7657 /* Frameworks */,
+				48F72E8B2735433A003E7657 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "thefork-challenge";
+			productName = "thefork-challenge";
+			productReference = 48F72E8D2735433A003E7657 /* thefork-challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		48F72EA22735433C003E7657 /* thefork-challengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48F72EBA2735433C003E7657 /* Build configuration list for PBXNativeTarget "thefork-challengeTests" */;
+			buildPhases = (
+				48F72E9F2735433C003E7657 /* Sources */,
+				48F72EA02735433C003E7657 /* Frameworks */,
+				48F72EA12735433C003E7657 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48F72EA52735433C003E7657 /* PBXTargetDependency */,
+			);
+			name = "thefork-challengeTests";
+			productName = "thefork-challengeTests";
+			productReference = 48F72EA32735433C003E7657 /* thefork-challengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		48F72EAC2735433C003E7657 /* thefork-challengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48F72EBD2735433C003E7657 /* Build configuration list for PBXNativeTarget "thefork-challengeUITests" */;
+			buildPhases = (
+				48F72EA92735433C003E7657 /* Sources */,
+				48F72EAA2735433C003E7657 /* Frameworks */,
+				48F72EAB2735433C003E7657 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				48F72EAF2735433C003E7657 /* PBXTargetDependency */,
+			);
+			name = "thefork-challengeUITests";
+			productName = "thefork-challengeUITests";
+			productReference = 48F72EAD2735433C003E7657 /* thefork-challengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48F72E852735433A003E7657 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					48F72E8C2735433A003E7657 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					48F72EA22735433C003E7657 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 48F72E8C2735433A003E7657;
+					};
+					48F72EAC2735433C003E7657 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 48F72E8C2735433A003E7657;
+					};
+				};
+			};
+			buildConfigurationList = 48F72E882735433A003E7657 /* Build configuration list for PBXProject "thefork-challenge" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 48F72E842735433A003E7657;
+			productRefGroup = 48F72E8E2735433A003E7657 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48F72E8C2735433A003E7657 /* thefork-challenge */,
+				48F72EA22735433C003E7657 /* thefork-challengeTests */,
+				48F72EAC2735433C003E7657 /* thefork-challengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48F72E8B2735433A003E7657 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F72E9D2735433C003E7657 /* LaunchScreen.storyboard in Resources */,
+				48F72E9A2735433C003E7657 /* Assets.xcassets in Resources */,
+				48F72E982735433A003E7657 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F72EA12735433C003E7657 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F72EAB2735433C003E7657 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48F72E892735433A003E7657 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F72ED1273567C6003E7657 /* NetworkService.swift in Sources */,
+				48F72ECC273565C9003E7657 /* Currencies.swift in Sources */,
+				48F72ECE273565E9003E7657 /* MainPhoto.swift in Sources */,
+				48F72ECA27356586003E7657 /* Offer.swift in Sources */,
+				48F72EDC27358272003E7657 /* UIView+ConstraintAnchors.swift in Sources */,
+				48F72ED727356F7E003E7657 /* RestaurantsListDataFetcher.swift in Sources */,
+				48F72EC627356544003E7657 /* Address.swift in Sources */,
+				48F72EC42735652A003E7657 /* Restaurant.swift in Sources */,
+				48F72EDA2735817F003E7657 /* Binding.swift in Sources */,
+				48F72E952735433A003E7657 /* ViewController.swift in Sources */,
+				48F72ED527356EB2003E7657 /* RestaurantsListViewModel.swift in Sources */,
+				48F72E912735433A003E7657 /* AppDelegate.swift in Sources */,
+				48F72EC227355C50003E7657 /* RestaurantsResponse.swift in Sources */,
+				48F72EC827356562003E7657 /* Rating.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F72E9F2735433C003E7657 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F72EA82735433C003E7657 /* thefork_challengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		48F72EA92735433C003E7657 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48F72EB42735433C003E7657 /* thefork_challengeUITestsLaunchTests.swift in Sources */,
+				48F72EB22735433C003E7657 /* thefork_challengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		48F72EA52735433C003E7657 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48F72E8C2735433A003E7657 /* thefork-challenge */;
+			targetProxy = 48F72EA42735433C003E7657 /* PBXContainerItemProxy */;
+		};
+		48F72EAF2735433C003E7657 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 48F72E8C2735433A003E7657 /* thefork-challenge */;
+			targetProxy = 48F72EAE2735433C003E7657 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		48F72E962735433A003E7657 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48F72E972735433A003E7657 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		48F72E9B2735433C003E7657 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48F72E9C2735433C003E7657 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		48F72EB52735433C003E7657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		48F72EB62735433C003E7657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		48F72EB82735433C003E7657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LUNGYV76TW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "thefork-challenge/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fermenendez.thefork-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		48F72EB92735433C003E7657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LUNGYV76TW;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "thefork-challenge/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fermenendez.thefork-challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		48F72EBB2735433C003E7657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LUNGYV76TW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fermenendez.thefork-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/thefork-challenge.app/thefork-challenge";
+			};
+			name = Debug;
+		};
+		48F72EBC2735433C003E7657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LUNGYV76TW;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fermenendez.thefork-challengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/thefork-challenge.app/thefork-challenge";
+			};
+			name = Release;
+		};
+		48F72EBE2735433C003E7657 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LUNGYV76TW;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fermenendez.thefork-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "thefork-challenge";
+			};
+			name = Debug;
+		};
+		48F72EBF2735433C003E7657 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LUNGYV76TW;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.fermenendez.thefork-challengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "thefork-challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48F72E882735433A003E7657 /* Build configuration list for PBXProject "thefork-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48F72EB52735433C003E7657 /* Debug */,
+				48F72EB62735433C003E7657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48F72EB72735433C003E7657 /* Build configuration list for PBXNativeTarget "thefork-challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48F72EB82735433C003E7657 /* Debug */,
+				48F72EB92735433C003E7657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48F72EBA2735433C003E7657 /* Build configuration list for PBXNativeTarget "thefork-challengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48F72EBB2735433C003E7657 /* Debug */,
+				48F72EBC2735433C003E7657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48F72EBD2735433C003E7657 /* Build configuration list for PBXNativeTarget "thefork-challengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48F72EBE2735433C003E7657 /* Debug */,
+				48F72EBF2735433C003E7657 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 48F72E852735433A003E7657 /* Project object */;
+}
