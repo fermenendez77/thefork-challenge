@@ -12,12 +12,16 @@ class RestaurantsListViewModel {
     //Dependencies
     let dataFetcher : RestaurantsListDataFetcher
     
-    //Data Binding
-    var restaurants : Binding<[Restaurant]> = Binding([])
+    
+    var restaurants : [Restaurant] = []
+    
+    //DataBinding
     var hasError : Binding<Bool> = Binding(false)
     var isLoading : Binding<Bool> = Binding(false)
+    var isDataLoaded : Binding<Bool> = Binding(false)
     
-    var dataCount : Int { restaurants.value.count }
+    var dataCount : Int { restaurants.count }
+    var viewModelsCellsBuffer : [String : RestaurantCellViewModel] = [:]
     
     public init(dataFetcher : RestaurantsListDataFetcher = RestaurantsListDataFetcherService()) {
         self.dataFetcher = dataFetcher
@@ -32,10 +36,23 @@ class RestaurantsListViewModel {
             self.isLoading.value = false
             switch result {
             case .success(let data):
-                self.restaurants.value = data
+                self.restaurants = data
+                self.isDataLoaded.value = !data.isEmpty
             case .failure(_):
                 self.hasError.value = true
+                self.isDataLoaded.value = false
             }
+        }
+    }
+    
+    func viewModelCell(for indexPath: IndexPath) -> RestaurantCellViewModel {
+        let restaurant = restaurants[indexPath.row]
+        if let viewModel = viewModelsCellsBuffer[restaurant.uuid] {
+            return viewModel
+        } else {
+            let viewModel = RestaurantCellViewModel(with: restaurant)
+            viewModelsCellsBuffer[restaurant.uuid] = viewModel
+            return viewModel
         }
     }
 }

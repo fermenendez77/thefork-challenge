@@ -12,8 +12,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let viewModel = RestaurantsListViewModel()
+        let rootVC = RestaurantsViewController(viewModel: viewModel)
+        let navigationView = UINavigationController(rootViewController: rootVC)
+        self.window?.rootViewController = navigationView
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
