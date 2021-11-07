@@ -164,13 +164,6 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         foodtypeView.text = viewModel?.type
         addressView.text = viewModel?.address
         priceView.text = viewModel?.averagePrice
-        viewModel?.image.bind { [weak self] image in
-            guard let self = self,
-                  let image = image else {
-                      return
-            }
-            self.imageView.image = image
-        }
         viewModel?.isSaved.bind { [weak self] isSaved in
             guard let self = self else {
                 return
@@ -181,5 +174,26 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
                               animations: { self.favsButton.isSelected = isSaved },
                               completion: nil)
         }
+        if let image = viewModel?.image.value {
+            imageView.image = image
+        } else {
+            viewModel?.image.bind { [weak self] image in
+                guard let self = self,
+                      let image = image else {
+                          return
+                }
+                self.imageView.image = image
+            }
+        }
     }
+    
+    func cleanCell() {
+        titleLabel.text = nil
+        ratingLabel.text = nil
+        foodtypeView.text = nil
+        addressView.text = nil
+        priceView.text = nil
+        imageView.image = nil
+    }
+    
 }

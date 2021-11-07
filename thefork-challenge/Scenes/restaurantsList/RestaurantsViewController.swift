@@ -115,6 +115,12 @@ class RestaurantsViewController: UIViewController {
 // MARK: CollectionView Delegate and Datarsource methods
 extension RestaurantsViewController : UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = collectionView
+            .dequeueReusableCell(withReuseIdentifier: RestaurantCollectionViewCell.cellID,
+                                 for: indexPath) as! RestaurantCollectionViewCell
+        cell.cleanCell()
+    }
 }
 
 extension RestaurantsViewController : UICollectionViewDelegateFlowLayout {
