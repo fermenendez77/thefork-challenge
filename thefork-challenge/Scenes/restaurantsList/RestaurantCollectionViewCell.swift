@@ -10,7 +10,9 @@ import UIKit
 class RestaurantCollectionViewCell: UICollectionViewCell {
     
     public static let cellID = "restaurantCollectionViewCell"
-    public static let height = 240.0
+    public static let height = 280.0
+    
+    private let imageSize = 140.0
     
     var viewModel : RestaurantCellViewModel? {
         didSet {
@@ -22,7 +24,7 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         let sv = UIStackView()
         sv.axis = .vertical
         sv.alignment = .leading
-        sv.distribution = .fillEqually
+        sv.spacing = 5.0
         sv.translatesAutoresizingMaskIntoConstraints = false
         return sv
     }()
@@ -52,45 +54,52 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    let foodTypeLabel : UILabel = {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
-        label.font = .systemFont(ofSize: 12.0)
-        label.textColor = .black
-        label.numberOfLines = 1
-        return label
-    }()
-    
     let addressLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 12.0)
+        label.font = .systemFont(ofSize: 16.0)
         label.textColor = .systemGray
         label.numberOfLines = 1
         return label
     }()
     
-    let averagePriceLabel : UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 12.0)
-        label.textColor = .systemGray
-        label.numberOfLines = 1
-        return label
+    let addressView : RestaurantInformationView = {
+        let rv = RestaurantInformationView()
+        rv.image = UIImage(named: "location")
+        return rv
     }()
     
-    override func layoutSubviews() {
+    let priceView : RestaurantInformationView = {
+        let rv = RestaurantInformationView()
+        rv.image = UIImage(named: "cash")
+        return rv
+    }()
+    
+    let foodtypeView : RestaurantInformationView = {
+        let rv = RestaurantInformationView()
+        rv.image = UIImage(named: "food")
+        return rv
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configureView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configureView()
+    }
+    
+    private func configureView() {
         // Root StackView
-        self.backgroundColor = .systemTeal
         addSubview(stackView)
         stackView.attachAnchors(to: self, with: UIEdgeInsets(top: 4.0, left: 12.0,
                                                              bottom: 4.0, right: 12.0))
         
-        //Image
-        imageView.frame = CGRect(x: 0, y: 0,
-                                 width: self.layer.bounds.width,
-                                 height: 90.0)
         stackView.addArrangedSubview(imageView)
+        imageView.heightAnchor.constraint(equalToConstant: imageSize).isActive = true
         
         //FoodType
-        stackView.addArrangedSubview(foodTypeLabel)
         
         let titleStackView = UIStackView()
         titleStackView.axis = .horizontal
@@ -101,9 +110,22 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         titleStackView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor).isActive = true
         titleStackView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor).isActive = true
         
-        stackView.addArrangedSubview(addressLabel)
-        stackView.addArrangedSubview(averagePriceLabel)
-        
+        let infoStackView = UIStackView()
+        infoStackView.axis = .vertical
+        infoStackView.distribution = .fillEqually
+        infoStackView.spacing = 3.0
+        infoStackView.addArrangedSubview(addressView)
+        infoStackView.addArrangedSubview(foodtypeView)
+        infoStackView.addArrangedSubview(priceView)
+        stackView.addArrangedSubview(infoStackView)
+    }
+    
+    func updateLabels() {
+        titleLabel.text = viewModel?.name
+        ratingLabel.text = viewModel?.rating
+        foodtypeView.text = viewModel?.type
+        addressView.text = viewModel?.address
+        priceView.text = viewModel?.averagePrice
         viewModel?.image.bind { [weak self] image in
             guard let self = self,
                   let image = image else {
@@ -111,14 +133,5 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
             }
             self.imageView.image = image
         }
-    }
-    
-    func updateLabels() {
-//        imageView.image = UIImage(named: "food-example")
-        titleLabel.text = viewModel?.name
-        ratingLabel.text = viewModel?.rating
-        foodTypeLabel.text = viewModel?.type
-        addressLabel.text = viewModel?.address
-        averagePriceLabel.text = viewModel?.averagePrice
     }
 }

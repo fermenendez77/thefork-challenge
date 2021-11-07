@@ -9,8 +9,31 @@ import UIKit
 
 class RestaurantsViewController: UIViewController {
     
-    var collectionView : UICollectionView!
     var viewModel : RestaurantsListViewModel
+    
+    var collectionView : UICollectionView!
+    let loadingView : UIAlertController = LoadingView(title: nil,
+                                                      message: "Loading...",
+                                                      preferredStyle: .alert)
+    lazy var sortActionSheet : UIAlertController = {
+        let alertController = UIAlertController(title: "Sort",
+                                                message: "Select an Option",
+                                                preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: "Sort by Name",
+                                                style: .default,
+                                                handler: { [weak self] _ in
+            self?.viewModel.sort(by: .name)
+        }))
+        alertController.addAction(UIAlertAction(title: "Sort by Rating",
+                                                style: .default,
+                                                handler: { [weak self] _ in
+            self?.viewModel.sort(by: .rating)
+        }))
+        alertController.addAction(UIAlertAction(title: "Dismiss",
+                                                style: .cancel))
+        
+        return alertController
+    }()
     
     public init(viewModel : RestaurantsListViewModel) {
         self.viewModel = viewModel
@@ -23,7 +46,7 @@ class RestaurantsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureView()
+        configureViews()
         configureDataBinding()
     }
     
@@ -54,8 +77,9 @@ class RestaurantsViewController: UIViewController {
             }
         }
     }
-
-    func configureView() {
+    
+    private func configureViews() {
+        // CollectionView
         let flowLayout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: self.view.bounds,
                                           collectionViewLayout: flowLayout)
@@ -66,25 +90,32 @@ class RestaurantsViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(RestaurantCollectionViewCell.self,
                                 forCellWithReuseIdentifier: RestaurantCollectionViewCell.cellID)
+        
+        // NavigationBar
+        self.title = "Restaurants"
+        let filter = UIBarButtonItem(image: UIImage(named: "solid-heart"),
+                                     style: .plain,
+                                     target: self,
+                                     action: #selector(favsButtonTapped))
+        
+        let favs = UIBarButtonItem(image: UIImage(named: "sort"),
+                                   style: .plain,
+                                   target: self,
+                                   action: #selector(sortButtonTapped))
+        
+        navigationItem.rightBarButtonItems = [filter, favs]
     }
     
-    let loadingView : UIAlertController = {
-        let alert = UIAlertController(title: nil,
-                                      message: "Please wait...",
-                                      preferredStyle: .alert)
-
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10,
-                                                                     y: 5,
-                                                                     width: 50,
-                                                                     height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.gray
-        loadingIndicator.startAnimating()
-        alert.view.addSubview(loadingIndicator)
-        return alert
-    }()
+    @objc func sortButtonTapped() {
+        self.present(sortActionSheet, animated: true)
+    }
+    
+    @objc func favsButtonTapped() {
+        
+    }
 }
 
+// MARK: CollectionView Delegate and Datarsource methods
 extension RestaurantsViewController : UICollectionViewDelegate {
     
 }
@@ -104,7 +135,7 @@ extension RestaurantsViewController : UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView
             .dequeueReusableCell(withReuseIdentifier: RestaurantCollectionViewCell.cellID,
-                                                      for: indexPath) as! RestaurantCollectionViewCell
+                                 for: indexPath) as! RestaurantCollectionViewCell
         cell.viewModel = viewModel.viewModelCell(for: indexPath)
         return cell
     }
@@ -118,6 +149,3 @@ extension RestaurantsViewController : UICollectionViewDataSource {
         return viewModel.dataCount
     }
 }
-
-
-

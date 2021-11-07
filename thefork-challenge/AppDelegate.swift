@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let viewModel = RestaurantsListViewModel()
         let rootVC = RestaurantsViewController(viewModel: viewModel)
-        let navigationView = UINavigationController(rootViewController: rootVC)
+        let navigationView = ForkNavigationController(rootViewController: rootVC)
         self.window?.rootViewController = navigationView
         self.window?.makeKeyAndVisible()
         

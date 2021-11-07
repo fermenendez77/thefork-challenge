@@ -21,7 +21,7 @@ class RestaurantCellViewModel {
     var rating : String { restaurant.aggregateRatings.thefork?.ratingValue.description ?? "N/A" }
     var type : String { restaurant.servesCuisine.uppercased() }
     var averagePrice : String { "Average price \(restaurant.priceRange) \(restaurant.currenciesAccepted.rawValue)" }
-    var address : String {"📍 \(restaurant.address.street), \(restaurant.address.postalCode), \(restaurant.address.locality ?? "") " }
+    var address : String {"\(restaurant.address.street), \(restaurant.address.postalCode), \(restaurant.address.locality ?? "")"}
     
     var image : Binding<UIImage?> = Binding(nil)
     

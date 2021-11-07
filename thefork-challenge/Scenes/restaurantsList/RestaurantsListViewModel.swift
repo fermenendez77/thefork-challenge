@@ -45,7 +45,7 @@ class RestaurantsListViewModel {
         }
     }
     
-    func viewModelCell(for indexPath: IndexPath) -> RestaurantCellViewModel {
+    public func viewModelCell(for indexPath: IndexPath) -> RestaurantCellViewModel {
         let restaurant = restaurants[indexPath.row]
         if let viewModel = viewModelsCellsBuffer[restaurant.uuid] {
             return viewModel
@@ -55,4 +55,18 @@ class RestaurantsListViewModel {
             return viewModel
         }
     }
+    
+    public func sort(by property : SortProperty) {
+        switch property {
+        case .name:
+            self.restaurants = restaurants.sorted(by: \.name, <)
+        case .rating:
+            self.restaurants = restaurants.sorted(by: \.rating)
+        }
+        isDataLoaded.value = true
+    }
+}
+
+enum SortProperty {
+    case name, rating
 }
