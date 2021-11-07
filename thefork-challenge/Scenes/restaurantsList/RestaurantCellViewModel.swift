@@ -34,7 +34,8 @@ class RestaurantCellViewModel {
     var isSaved : Binding<Bool>
     
     func getImage() {
-        guard let urlString = restaurant.mainPhoto?.the612X344 else {
+        guard let urlString = restaurant.mainPhoto?.the664X374 else {
+            self.image.value = UIImage(named: "placeholder")
             return
         }
         

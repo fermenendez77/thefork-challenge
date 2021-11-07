@@ -44,6 +44,10 @@ class RestaurantsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -98,7 +102,6 @@ class RestaurantsViewController: UIViewController {
                                    style: .plain,
                                    target: self,
                                    action: #selector(sortButtonTapped))
-        
         navigationItem.rightBarButtonItems = [filter, favs]
     }
     

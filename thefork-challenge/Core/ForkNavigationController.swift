@@ -12,9 +12,19 @@ class ForkNavigationController : UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let greenColor = UIColor(named: "fork-green")
         navigationBar.tintColor = .white
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationBar.titleTextAttributes = textAttributes
-        navigationBar.backgroundColor = UIColor(named: "fork-green")
+        navigationBar.backgroundColor = greenColor
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+            navBarAppearance.backgroundColor = greenColor
+            navigationBar.standardAppearance = navBarAppearance
+            navigationBar.scrollEdgeAppearance = navBarAppearance
+        }
     }
 }

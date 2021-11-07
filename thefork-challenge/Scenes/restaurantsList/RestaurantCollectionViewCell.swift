@@ -89,17 +89,6 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
-    var shareButton : UIButton = {
-        let button = UIButton()
-        let image = UIImage(named: "share")
-        button.setImage(image, for: .normal)
-        button.tintColor = .black
-        button.addTarget(self,
-                         action: #selector(shareButtonTapped),
-                         for: .touchUpInside)
-        return button
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
@@ -112,11 +101,6 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
     
     @objc func favsButtonTapped() {
         viewModel?.toggleSaved()
-//        UIView.transition(with: self.favsButton,
-//                                      duration: 0.5,
-//                                      options: .transitionCrossDissolve,
-//                                      animations: { self.favsButton.isSelected = !self.favsButton.isSelected },
-//                                      completion: nil)
     }
     
     @objc func shareButtonTapped() {
@@ -136,7 +120,6 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         controlsStackView.axis = .horizontal
         controlsStackView.spacing = 3.0
         controlsStackView.addArrangedSubview(favsButton)
-        controlsStackView.addArrangedSubview(shareButton)
         stackView.addArrangedSubview(controlsStackView)
         
         let titleStackView = UIStackView()
