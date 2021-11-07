@@ -12,11 +12,14 @@ class RestaurantCellViewModel {
     
     var restaurant : Restaurant
     let persistanceService : RestaurantsPersistance
+    let imageDownloaderService : ImageDownloader
     
     public init(with restaurant : Restaurant,
+                imageDownloader : ImageDownloader = ImageDownloaderService(),
                 persistanceService : RestaurantsPersistance) {
         self.restaurant = restaurant
         self.persistanceService = persistanceService
+        self.imageDownloaderService = imageDownloader
         self.isSaved = Binding(restaurant.isSaved)
         getImage()
     }
@@ -31,20 +34,25 @@ class RestaurantCellViewModel {
     var isSaved : Binding<Bool>
     
     func getImage() {
+        guard let urlString = restaurant.mainPhoto?.the612X344 else {
+            return
+        }
         
-        guard let urlString = restaurant.mainPhoto?.the612X344,
-              let url = URL(string: urlString) else {
-                  return
-              }
-        
-        DispatchQueue.global().async {
-            guard let data = try? Data(contentsOf: url) else {
+        imageDownloaderService.getImage(from: URL(string: urlString),
+                                        completionHandler: { [weak self] result in
+            
+            guard let self = self else {
                 return
             }
-            DispatchQueue.main.async {
-                self.image.value = UIImage(data: data)
+            
+            switch result {
+            case .success(let image):
+                self.image.value = image
+            case .failure(let error):
+                print(error)
+                self.image.value = UIImage(named: "placeholder")
             }
-        }
+        })
     }
     
     func toggleSaved() {
