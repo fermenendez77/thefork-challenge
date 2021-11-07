@@ -23,6 +23,10 @@ struct Restaurant: Codable {
     
     var isSaved : Bool = false
     
+    var addressString : String {
+        "\(address.street), \(address.postalCode), \(address.locality ?? "")"
+    }
+    
     enum CodingKeys: String, CodingKey {
         case name
         case uuid

@@ -16,7 +16,7 @@ public class ManagedRestaurant: NSManagedObject {
         self.restaurantID = restaurant.uuid
         self.name = restaurant.name
         self.rating = restaurant.rating
-        self.address = "\(restaurant.address.street), \(restaurant.address.postalCode), \(restaurant.address.locality ?? "")"
+        self.address = restaurant.addressString
         self.servesCuisine = restaurant.servesCuisine
     }
 }
