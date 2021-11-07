@@ -11,7 +11,7 @@
 		48F72E952735433A003E7657 /* RestaurantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72E942735433A003E7657 /* RestaurantsViewController.swift */; };
 		48F72E9A2735433C003E7657 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 48F72E992735433C003E7657 /* Assets.xcassets */; };
 		48F72E9D2735433C003E7657 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 48F72E9B2735433C003E7657 /* LaunchScreen.storyboard */; };
-		48F72EA82735433C003E7657 /* thefork_challengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EA72735433C003E7657 /* thefork_challengeTests.swift */; };
+		48F72EA82735433C003E7657 /* RestaurantsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EA72735433C003E7657 /* RestaurantsViewModelTests.swift */; };
 		48F72EB22735433C003E7657 /* thefork_challengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EB12735433C003E7657 /* thefork_challengeUITests.swift */; };
 		48F72EB42735433C003E7657 /* thefork_challengeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EB32735433C003E7657 /* thefork_challengeUITestsLaunchTests.swift */; };
 		48F72EC227355C50003E7657 /* RestaurantsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72EC127355C50003E7657 /* RestaurantsResponse.swift */; };
@@ -40,6 +40,7 @@
 		48F72F0427383C37003E7657 /* FavsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72F0327383C37003E7657 /* FavsViewController.swift */; };
 		48F72F06273848BE003E7657 /* FavsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72F05273848BD003E7657 /* FavsViewModel.swift */; };
 		48F72F08273857E7003E7657 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72F07273857E7003E7657 /* ImageDownloader.swift */; };
+		48F72F0A27386EF1003E7657 /* MockedTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48F72F0927386EF1003E7657 /* MockedTestData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +68,7 @@
 		48F72E9C2735433C003E7657 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		48F72E9E2735433C003E7657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		48F72EA32735433C003E7657 /* thefork-challengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "thefork-challengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		48F72EA72735433C003E7657 /* thefork_challengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thefork_challengeTests.swift; sourceTree = "<group>"; };
+		48F72EA72735433C003E7657 /* RestaurantsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantsViewModelTests.swift; sourceTree = "<group>"; };
 		48F72EAD2735433C003E7657 /* thefork-challengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "thefork-challengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		48F72EB12735433C003E7657 /* thefork_challengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thefork_challengeUITests.swift; sourceTree = "<group>"; };
 		48F72EB32735433C003E7657 /* thefork_challengeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = thefork_challengeUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -97,6 +98,7 @@
 		48F72F0327383C37003E7657 /* FavsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsViewController.swift; sourceTree = "<group>"; };
 		48F72F05273848BD003E7657 /* FavsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavsViewModel.swift; sourceTree = "<group>"; };
 		48F72F07273857E7003E7657 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		48F72F0927386EF1003E7657 /* MockedTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedTestData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +165,8 @@
 		48F72EA62735433C003E7657 /* thefork-challengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				48F72EA72735433C003E7657 /* thefork_challengeTests.swift */,
+				48F72EA72735433C003E7657 /* RestaurantsViewModelTests.swift */,
+				48F72F0927386EF1003E7657 /* MockedTestData.swift */,
 			);
 			path = "thefork-challengeTests";
 			sourceTree = "<group>";
@@ -428,7 +431,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48F72EA82735433C003E7657 /* thefork_challengeTests.swift in Sources */,
+				48F72F0A27386EF1003E7657 /* MockedTestData.swift in Sources */,
+				48F72EA82735433C003E7657 /* RestaurantsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

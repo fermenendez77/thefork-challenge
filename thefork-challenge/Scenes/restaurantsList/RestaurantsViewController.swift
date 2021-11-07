@@ -35,6 +35,16 @@ class RestaurantsViewController: UIViewController {
         return alertController
     }()
     
+    lazy var errorActionController : UIAlertController = {
+        let alertController = UIAlertController(title: "Error",
+                                                message: "There was an Error fetching the data",
+                                                preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Try Again", style: .default, handler: { _ in
+            self.viewModel.fetchData()
+        }))
+        return alertController
+    }()
+    
     public init(viewModel : RestaurantsListViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -74,6 +84,15 @@ class RestaurantsViewController: UIViewController {
                 self.present(self.loadingView, animated: true)
             } else {
                 self.loadingView.dismiss(animated: true)
+            }
+        }
+        
+        viewModel.hasError.bind { [weak self] hasError in
+            guard let self = self else {
+                return
+            }
+            if hasError {
+                self.present(self.errorActionController, animated: true)
             }
         }
     }
