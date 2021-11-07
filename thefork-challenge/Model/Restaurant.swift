@@ -20,4 +20,18 @@ struct Restaurant: Codable {
     var rating : Double {
         aggregateRatings.thefork?.ratingValue ?? 0.0
     }
+    
+    var isSaved : Bool = false
+    
+    enum CodingKeys: String, CodingKey {
+        case name
+        case uuid
+        case servesCuisine
+        case priceRange
+        case currenciesAccepted
+        case address
+        case aggregateRatings
+        case mainPhoto
+        case bestOffer
+    }
 }

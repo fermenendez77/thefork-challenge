@@ -10,8 +10,7 @@ import UIKit
 class RestaurantCollectionViewCell: UICollectionViewCell {
     
     public static let cellID = "restaurantCollectionViewCell"
-    public static let height = 280.0
-    
+    public static let height = 300.0
     private let imageSize = 140.0
     
     var viewModel : RestaurantCellViewModel? {
@@ -80,6 +79,27 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         return rv
     }()
     
+    var favsButton : UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(named: "filled-heart"), for: .selected)
+        button.setImage(UIImage(named: "empty-heart"), for: .normal)
+        button.addTarget(self,
+                         action: #selector(favsButtonTapped),
+                         for: .touchUpInside)
+        return button
+    }()
+    
+    var shareButton : UIButton = {
+        let button = UIButton()
+        let image = UIImage(named: "share")
+        button.setImage(image, for: .normal)
+        button.tintColor = .black
+        button.addTarget(self,
+                         action: #selector(shareButtonTapped),
+                         for: .touchUpInside)
+        return button
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureView()
@@ -88,6 +108,19 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configureView()
+    }
+    
+    @objc func favsButtonTapped() {
+        viewModel?.toggleSaved()
+//        UIView.transition(with: self.favsButton,
+//                                      duration: 0.5,
+//                                      options: .transitionCrossDissolve,
+//                                      animations: { self.favsButton.isSelected = !self.favsButton.isSelected },
+//                                      completion: nil)
+    }
+    
+    @objc func shareButtonTapped() {
+        
     }
     
     private func configureView() {
@@ -99,7 +132,12 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
         stackView.addArrangedSubview(imageView)
         imageView.heightAnchor.constraint(equalToConstant: imageSize).isActive = true
         
-        //FoodType
+        let controlsStackView = UIStackView()
+        controlsStackView.axis = .horizontal
+        controlsStackView.spacing = 3.0
+        controlsStackView.addArrangedSubview(favsButton)
+        controlsStackView.addArrangedSubview(shareButton)
+        stackView.addArrangedSubview(controlsStackView)
         
         let titleStackView = UIStackView()
         titleStackView.axis = .horizontal
@@ -132,6 +170,16 @@ class RestaurantCollectionViewCell: UICollectionViewCell {
                       return
             }
             self.imageView.image = image
+        }
+        viewModel?.isSaved.bind { [weak self] isSaved in
+            guard let self = self else {
+                return
+            }
+            UIView.transition(with: self.favsButton,
+                              duration: 0.5,
+                              options: .transitionCrossDissolve,
+                              animations: { self.favsButton.isSelected = isSaved },
+                              completion: nil)
         }
     }
 }

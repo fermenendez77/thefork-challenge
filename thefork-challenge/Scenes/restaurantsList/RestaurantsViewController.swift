@@ -48,10 +48,6 @@ class RestaurantsViewController: UIViewController {
         super.viewDidLoad()
         configureViews()
         configureDataBinding()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         viewModel.fetchData()
     }
     
@@ -111,7 +107,8 @@ class RestaurantsViewController: UIViewController {
     }
     
     @objc func favsButtonTapped() {
-        
+        let favsVC = FavsViewController(viewModel: FavsViewModel())
+        self.navigationController?.pushViewController(favsVC, animated: true)
     }
 }
 

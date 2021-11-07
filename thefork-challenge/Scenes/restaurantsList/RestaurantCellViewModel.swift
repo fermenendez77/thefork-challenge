@@ -10,10 +10,14 @@ import UIKit
 
 class RestaurantCellViewModel {
     
-    let restaurant : Restaurant
+    var restaurant : Restaurant
+    let persistanceService : RestaurantsPersistance
     
-    public init(with restaurant : Restaurant){
+    public init(with restaurant : Restaurant,
+                persistanceService : RestaurantsPersistance) {
         self.restaurant = restaurant
+        self.persistanceService = persistanceService
+        self.isSaved = Binding(restaurant.isSaved)
         getImage()
     }
     
@@ -24,6 +28,7 @@ class RestaurantCellViewModel {
     var address : String {"\(restaurant.address.street), \(restaurant.address.postalCode), \(restaurant.address.locality ?? "")"}
     
     var image : Binding<UIImage?> = Binding(nil)
+    var isSaved : Binding<Bool>
     
     func getImage() {
         
@@ -40,5 +45,16 @@ class RestaurantCellViewModel {
                 self.image.value = UIImage(data: data)
             }
         }
+    }
+    
+    func toggleSaved() {
+        if restaurant.isSaved {
+            let result = persistanceService.delete(restaurant: restaurant)
+            restaurant.isSaved = !result
+        } else {
+            persistanceService.save(restaurant: restaurant)
+            restaurant.isSaved = true
+        }
+        self.isSaved.value = restaurant.isSaved
     }
 }

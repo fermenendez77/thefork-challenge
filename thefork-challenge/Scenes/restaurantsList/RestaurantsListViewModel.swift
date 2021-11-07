@@ -11,7 +11,7 @@ class RestaurantsListViewModel {
     
     //Dependencies
     let dataFetcher : RestaurantsListDataFetcher
-    
+    let persistanceService : RestaurantsPersistance
     
     var restaurants : [Restaurant] = []
     
@@ -23,8 +23,9 @@ class RestaurantsListViewModel {
     var dataCount : Int { restaurants.count }
     var viewModelsCellsBuffer : [String : RestaurantCellViewModel] = [:]
     
-    public init(dataFetcher : RestaurantsListDataFetcher = RestaurantsListDataFetcherService()) {
+    public init(dataFetcher : RestaurantsListDataFetcher = RestaurantsListDataFetcherService(),         persistanceService : RestaurantsPersistance = RestaurantPersistanceService()) {
         self.dataFetcher = dataFetcher
+        self.persistanceService = persistanceService
     }
     
     public func fetchData() {
@@ -36,8 +37,9 @@ class RestaurantsListViewModel {
             self.isLoading.value = false
             switch result {
             case .success(let data):
-                self.restaurants = data
-                self.isDataLoaded.value = !data.isEmpty
+                let updatedData = self.updateWithSaved(restaurants: data)
+                self.restaurants = updatedData
+                self.isDataLoaded.value = !updatedData.isEmpty
             case .failure(_):
                 self.hasError.value = true
                 self.isDataLoaded.value = false
@@ -50,7 +52,8 @@ class RestaurantsListViewModel {
         if let viewModel = viewModelsCellsBuffer[restaurant.uuid] {
             return viewModel
         } else {
-            let viewModel = RestaurantCellViewModel(with: restaurant)
+            let viewModel = RestaurantCellViewModel(with: restaurant,
+                                                    persistanceService: persistanceService)
             viewModelsCellsBuffer[restaurant.uuid] = viewModel
             return viewModel
         }
@@ -64,6 +67,18 @@ class RestaurantsListViewModel {
             self.restaurants = restaurants.sorted(by: \.rating)
         }
         isDataLoaded.value = true
+    }
+    
+    private func updateWithSaved(restaurants : [Restaurant]) -> [Restaurant] {
+        var restaurants = restaurants
+        var savedIds = persistanceService.fetchSaved().map { $0.restaurantID }
+        for (index,restaurant) in restaurants.enumerated() {
+            if let savedIndex = savedIds.firstIndex(where: { restaurant.uuid == $0 }) {
+                restaurants[index].isSaved = true
+                savedIds.remove(at: savedIndex)
+            }
+        }
+        return restaurants
     }
 }
 
